@@ -2052,96 +2052,207 @@ font-weight: 950;
 
 
 
-/* TREE GROW */
+/* =========================
+   MOBILE-ONLY RESCUE STYLES
+   (Desktop untouched)
+   ========================= */
 
-/*
-.tree-growing-anim {
-  position: relative;
-  display: inline-block;
-  color: transparent; 
-  
+/* --- Header / nav stays aligned on small viewports (and at extreme zoom) --- */
+@media (max-width: 900px){
+  header {
+    width: 100% !important;
+    margin-left: 0 !important;
+    box-sizing: border-box;
+    display: grid !important;
+    grid-template-columns: auto 1fr auto; /* left nav | spacer | right nav */
+    align-items: center;
+    gap: 0.5rem;
+    padding-inline: 1rem;
+  }
+
+  .nav,
+  .nav-right {
+    display: flex !important;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.75rem;
+    min-width: 0;
+  }
+
+  .nav       { justify-self: start; }
+  .nav-right { justify-self: end; transform: none !important; margin: 0 !important; position: static !important; }
 }
 
-.tree-growing-anim::after,
-.tree-growing-anim::before {
-            content: '';
-            position: absolute;
-            left: 75%;
-            transform: translateX(-50%);
-        }
+/* --- Phone layout + hero fixes --- */
+@media (max-width: 700px){
 
+  /* prevent sideways scroll on tiny screens */
+  html, body { overflow-x: hidden; }
 
-
-
-        .tree-growing-anim::after {
-          bottom: 40px; 
-          width: 20px; 
-          height: 20px; 
-          background-color: green;
-          border-radius: 50%;  
-          opacity: 0;
-          animation: growLeaf 4s forwards;
-          animation-delay: 2s; 
-      }
-  
-
-        .tree-growing-anim::before {
-          bottom: 20px; 
-          width: 20px; 
-          height: 20px;
-          background-color: black;
-          animation: growLine 4s forwards; 
-          animation-delay: 2s;
-      }
-
-
-
-
-
-
-
-@keyframes growLine {
-  0% {
-      height: 20px; 
+  /* hero paragraph should not sit on the far right */
+  .flow-right {
+    position: static !important;
+    right: auto !important;
+    margin: 0.25rem 0 0 0 !important;
+    text-align: center !important;
+    max-width: 32ch !important;
+    padding: 0 !important;
   }
-  50% {
-      height: 20px; 
+
+  /* center the hero card and make it a proper "box" */
+  .browser-window{
+    width: 90% !important;
+    max-width: 420px !important;
+    margin-inline: auto !important;
+    padding: clamp(1rem, 4vw, 2rem) !important;
+    height: auto !important;
+    border-radius: 12px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+    background-color: rgba(255,255,255,0.85);
+    text-align: center !important; 
   }
-  100% {
-      height: 100px; 
+
+    .browser-window * {
+    text-align: center !important;
+    margin-inline: auto;
+  }
+
+  /* center hero text only on mobile */
+  .browser-window h1,
+  .browser-window p { text-align: center !important; }
+
+  /* collapse hero/content grid to one column */
+  .hero.site-content-grid{
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    grid-gap: 0.75rem !important;
+    padding-inline: 1rem !important;
+  }
+  .hero.site-content-grid > *{
+    grid-column: 1 / -1 !important;
+    justify-self: center;
+    text-align: center;
+  }
+
+  /* remove hard left margins that break alignment on phones */
+  .content-title3,
+  .mainpara,
+  .project-link { margin-left: 0 !important; }
+
+  /* make paragraph width readable on phones */
+  .mainpara { max-width: 50ch !important; margin-inline: auto !important;  }
+
+  /* Tame big section/project titles ONLY on phones */
+  .project-title,
+  .content-title3 {
+    font-size: clamp(1.4rem, 5.5vw, 2.25rem) !important;
+    line-height: 1.15 !important;
+  }
+
+  /* nav text stays legible but compact on small screens */
+  .nav a, .nav-right a {
+    font-size: clamp(0.9rem, 2.8vw, 1rem);
+    line-height: 1.2;
+    white-space: nowrap;
   }
 }
 
 
-@keyframes growLeaf {
-  0% {
-    opacity: 0;
-    bottom: 20px;
-    width: 60px; 
-    height: 0px; 
-  }
-  50% {
-    opacity: 0; 
-    bottom: 60px; 
-    width: 60px; 
-    height: 50px; 
-  }
-  
-  70% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 1;
-    bottom: 60px; 
-    width: 60px; 
-    height: 120px; 
-    
-   }
+/* ===== Web App Dev 1 — mobile-only fixes ===== */
+@media (max-width: 700px){
+
+  /* Stop sideways scroll */
+  html, body { overflow-x: hidden; }
+
+  /* Disable sticky behavior on mobile so text sits in normal flow */
+  .project-sticky.mobile-header{
+    position: static !important;
+    top: auto !important;
+    pointer-events: auto !important;
+    height: auto !important;
+    width: 100% !important;
+    margin: 0 auto !important;
   }
 
-*/.contact {
-}
-.center {
-}
-.update {
+  /* Collapse the project header to a tidy single column */
+  .project-sticky.mobile-header .project.site-content-grid{
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: .5rem !important;
+    padding-inline: 1rem !important;
+  }
+
+  /* Title/meta/next: centered, full width */
+  .project-sticky.mobile-header .project-content{
+    grid-column: 1 / -1 !important;
+    text-align: center !important;
+    justify-self: center !important;
+  }
+  .project-sticky.mobile-header .project-meta,
+  .project-sticky.mobile-header .project-title,
+  .project-sticky.mobile-header .project-next{
+    pointer-events: auto; /* keep links tappable */
+    margin: 0 !important;
+  }
+
+  /* Image goes BELOW the header text, centered, with clear spacing */
+  .project-thumb.project-thumb--videoproduction.oversize.mobile-version{
+    grid-column: 1 / -1 !important;
+    margin: 2rem auto 0 !important;       /* creates space below the title */
+    width: 95% !important;
+    max-width: 560px !important;
+    justify-self: center !important;
+    position: relative;
+    z-index: 1;                             /* sits behind any future overlays */
+  }
+  .project-thumb .vpheaderimg{
+    display: block;
+    max-width: 100% !important;
+    height: auto !important;
+    margin: 0 auto !important;
+  }
+
+  /* Main content: single column, comfortable line-length */
+  .site-content-grid{
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 1rem !important;
+    padding-inline: 1rem !important;
+  }
+  .case{
+    grid-column: 1 / -1 !important;
+    width: 100%;
+  }
+
+  /* Paragraphs & headings centered + readable width */
+  .case p,
+  .case h2,
+  .case h3,
+  .caption{
+    text-align: center !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+  .case p{ max-width: 60ch; margin-inline: auto !important; }
+
+  /* Images inside figures scale and center */
+  figure.full .insert.vpheaderimg{
+    width: 100% !important;
+    max-width: 560px !important;
+    height: auto !important;
+    margin: 1rem auto !important;
+  }
+  figure.full{ margin: 0 auto 1rem !important; }
+
+  /* Tighter, mobile-friendly type just for this page’s header bits */
+  .project-meta{ font-size: 1rem !important; }
+  .project-title{ font-size: clamp(1.4rem, 6vw, 2rem) !important; line-height: 1.15 !important; }
+  .project-next{ font-size: .95rem !important; }
+
+  /* Footer centered */
+  footer .copyright{
+    margin: 3rem auto 0 !important;
+    width: auto !important;
+    text-align: center !important;
+  }
 }
