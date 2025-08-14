@@ -1010,6 +1010,21 @@ body[data-theme='dark'] .dropdown-menu button:hover {
     }
   }
 
+/* Rentables image alignment + sizing */
+.project-thumb.project-thumb--videoproduction.oversize.mobile-version {
+  display: flex;
+  justify-content: flex-end; /* Push image to the right */
+  align-items: flex-start; /* Keep it aligned to heading top */
+  margin-top: 4rem; /* Add space below nav bar */
+}
+
+.project-thumb.project-thumb--videoproduction.oversize.mobile-version img.vpheaderimg {
+  width: 95%; /* Much larger image */
+  max-width: 900px; /* Cap so it doesn't overwhelm layout */
+  height: auto;
+}
+
+
   .project {
    /* overflow: hidden; HIDES BOTTOM OF WORDS */
     position: relative; /* Needed for absolute positioning */
