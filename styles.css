@@ -1010,19 +1010,6 @@ body[data-theme='dark'] .dropdown-menu button:hover {
     }
   }
 
-/* Rentables image alignment + sizing */
-.project-thumb.project-thumb--videoproduction.oversize.mobile-version {
-  display: flex;
-  justify-content: flex-end; /* Push image to the right */
-  align-items: flex-start; /* Keep it aligned to heading top */
-  margin-top: 4rem; /* Add space below nav bar */
-}
-
-.project-thumb.project-thumb--videoproduction.oversize.mobile-version img.vpheaderimg {
-  width: 95%; /* Much larger image */
-  max-width: 900px; /* Cap so it doesn't overwhelm layout */
-  height: auto;
-}
 
 
   .project {
@@ -1086,6 +1073,7 @@ body[data-theme='dark'] .dropdown-menu button:hover {
 
 .project-thumb {
   margin:25rem auto 0;
+  width: 100%;
   background:#fafafa url(/images/fine-noise_o.png)repeat;
   background:var(--color-omega)url(/images/fine-noise_o.png)repeat;
   -webkit-animation:noise-animation .22s steps(8)infinite;
@@ -2269,5 +2257,126 @@ font-weight: 950;
     margin: 3rem auto 0 !important;
     width: auto !important;
     text-align: center !important;
+  }
+}
+
+
+/* Desktop layout for Rentables image */
+/* Desktop layout for Rentables image — responsive left start + right gutter */
+@media (min-width: 1024px) {
+  .project-thumb {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;       /* we'll offset the image itself */
+    padding-top: 40px;
+    padding-right: clamp(16px, 3vw, 48px);  /* space from right edge */
+    box-sizing: border-box;
+  }
+
+  .project-thumb img.vpheaderimg {
+    /* size */
+    width: min(60vw, 800px);          /* big but capped */
+    height: auto;
+
+    /* responsive left offset so it starts ~at "School:" on 1080p and 2K */
+    margin-left: clamp(520px, 36vw, 820px);
+
+    /* prevent any other max-width rules from fighting this */
+    max-width: none;
+  }
+}
+
+
+/* ===== Index page — mobile fixes for project cards (stack + left align) ===== */
+@media (max-width: 700px){
+
+  /* Project links: stack as full-width blocks */
+  .project-link{
+    display: block;
+    width: 100%;
+    max-width: 560px;
+    margin: 1.5rem auto;
+  }
+
+  /* Collapse grid inside each project to a single column, left-aligned */
+  .project.site-content-grid{
+    display: flex !important;
+    flex-direction: column;
+    align-items: flex-start; /* keep text left */
+    gap: .25rem;
+    text-align: left !important;
+  }
+
+  /* Meta text above title, left aligned */
+  .project-meta.project-content{
+    font-size: .9rem;
+    margin: 0 0 .25rem 0 !important;
+    text-align: left !important;
+  }
+
+  /* Title left aligned */
+  .project-title.project-content{
+    font-size: clamp(1.3rem, 6vw, 1.8rem);
+    line-height: 1.2;
+    margin: 0 !important;
+    text-align: left !important;
+  }
+}
+
+
+/* ===== Mobile nav centering (fix "work/about" shift) ===== */
+@media (max-width: 700px){
+  /* reduce the page grid side gutters on mobile */
+  .site, header, footer{
+    grid-template-columns: [full-start] 1rem [main-start] 1fr [main-end] 1rem [full-end] !important;
+  }
+
+  /* center the left nav group; kill the global offset */
+  .nav{
+    margin-left: 0 !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center;
+    gap: 1.25rem;
+  }
+
+  /* keep the right nav anchored to the right edge */
+  .nav-right{
+    justify-self: end;
+    transform: none !important;
+    margin: 0 !important;
+    position: static !important;
+    display: flex !important;
+    align-items: center;
+  }
+}
+
+
+/* ===== Mobile nav: fully centered bar ===== */
+@media (max-width: 700px){
+  header {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    padding: 0 1.5rem !important; /* adjust spacing from screen edge */
+  }
+
+  .nav {
+    display: flex !important;
+    gap: 1.25rem !important;
+    margin: 0 !important;
+  }
+
+  .nav-right {
+    margin: 0 !important;
+  }
+}
+
+/* ===== Mobile-only left padding for project sections ===== */
+@media (max-width: 768px) {
+  .project,
+  .project-title,
+  .project-meta {
+    padding-left: 1.5rem; /* adds breathing room on the left */
   }
 }
