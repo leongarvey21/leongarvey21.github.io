@@ -191,3 +191,6 @@ function updateProgressBar() {
 });
 
 /* CURSOR FOLLOWER */
+
+
+

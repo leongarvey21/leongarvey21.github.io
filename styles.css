@@ -1,9 +1,8 @@
 html {
-  
- 
-  box-sizing:border-box
-     
-  }
+  box-sizing: border-box;      /* <-- add missing semicolon */
+  scroll-behavior: smooth;     /* smooth anchor scrolling */
+}
+*, *::before, *::after { box-sizing: inherit; }
 
   @media(min-width:40rem) {
     html {
@@ -573,6 +572,15 @@ margin-left: 300px;
 
     }
 
+
+.recommended-viewing {
+  font-size: 0.85rem;  /* smaller font */
+  color: gray;         /* gray text */
+  text-align: left;    /* optional: keeps alignment consistent */
+}
+
+ 
+
 .smallcaps {
   font-feature-settings:"c2sc";
   font-variant:small-caps
@@ -991,7 +999,7 @@ body[data-theme='dark'] .dropdown-menu button:hover {
 
   .scroll-indicator {
     position: absolute;
-    bottom: 200px;
+    bottom: 350px;
     left: 50%;
     transform: translateX(-50%);
     animation: bounce 2s infinite;
@@ -2380,3 +2388,6 @@ font-weight: 950;
     padding-left: 1.5rem; /* adds breathing room on the left */
   }
 }
+
+
+
