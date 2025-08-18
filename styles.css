@@ -2391,3 +2391,13 @@ font-weight: 950;
 
 
 
+.image-row {
+  display: flex;
+  gap: 20px;   /* space between the two images */
+  justify-content: flex-start; /* align images to the left */
+  margin-top: 20px;
+}
+
+.image-row figure {
+  margin: 0;
+}
