@@ -194,3 +194,30 @@ function updateProgressBar() {
 
 
 
+/* web page clicking image */
+
+
+// Grab modal elements
+const modal = document.getElementById("imageModal");
+const modalImg = document.getElementById("modalImg");
+const closeBtn = document.querySelector(".close");
+
+// Find all clickable images
+document.querySelectorAll(".clickable-img").forEach(img => {
+  img.addEventListener("click", () => {
+    modal.style.display = "flex";
+    modalImg.src = img.src;
+  });
+});
+
+// Close modal when X is clicked
+closeBtn.addEventListener("click", () => {
+  modal.style.display = "none";
+});
+
+// Close modal when background is clicked
+modal.addEventListener("click", (e) => {
+  if (e.target === modal) {
+    modal.style.display = "none";
+  }
+});

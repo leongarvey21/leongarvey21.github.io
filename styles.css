@@ -2401,3 +2401,56 @@ font-weight: 950;
 .image-row figure {
   margin: 0;
 }
+
+
+
+/* clickable image for web  page */
+
+/* Modal background */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.85);
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Modal image */
+.modal-content {
+  max-width: 90%;
+  max-height: 90%;
+  margin-top: 3%;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.6);
+  animation: fadeIn 0.3s ease;
+}
+
+/* Close button */
+.close {
+  position: absolute;
+  top: 20px;
+  right: 40px;
+  color: #fff;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.clickable-img {
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+.clickable-img:hover {
+  transform: scale(1.02);
+}

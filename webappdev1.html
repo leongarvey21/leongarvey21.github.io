@@ -53,7 +53,10 @@
   </div>
   
   
-  
+  <div id="imageModal" class="modal">
+  <span class="close">&times;</span>
+  <img class="modal-content" id="modalImg">
+</div>
   
   
   <!-- progress circle -->
@@ -71,7 +74,7 @@
 
 
         <div class="project-sticky mobile-header">
-            <div class="project site-content-grid" data-project="project3">
+            <div class="project site-content-grid" data-project="project5">
                 <div class="project-meta project-content mobile-title">
                     <span class="smallcaps">2024</span> – view back-end developing, creation of a movie collection app
                 </div>
@@ -79,7 +82,7 @@
                 Rentables
                 </h1>
                 <div class="project-next project-content mobile-title">
-                    <a href="webappdev1.html" class="arrow-link">next project</a>
+                    <a href="stylestash.html" class="arrow-link">next project</a>
                 </div>
             </div>
         </div>
@@ -100,66 +103,151 @@
                 </p>
                 <h2 class="hidden">Overview</h2>
                 
-        
-                <p class="hidden">Rentables is a movie collection app. Here you have the ability to make collections of your favourite movies, your least favourite movies and
-                    rate them along the way. The look and style is based on 80's/90's blockbuster.
-                    
-                </p>
+        <p class="hidden">
+               <strong>Rentables</strong> is a movie collection web app that allows users to create, rate,
+        and organize collections of their favorite (and least favorite) movies. 
+        The app was designed with a nostalgic 80s/90s Blockbuster aesthetic, featuring
+        a retro-inspired color palette and typography.
+        <br><br>
+        The project was developed from scratch using <strong>React.js</strong> for the front-end,
+        and a <strong>Node.js + Express</strong> backend to handle authentication, user sessions,
+        and database operations. PHP and Handlebars were used for server-side rendering where required.
+      </p>
                 
         
-                <h2 class="large-spacer hidden">Registering</h2>
-                <h3 class="hidden">Signing Up - Login</h3>
-                <p class="hidden">Once opening the website you are greeted with a signup or login page, it is as simple as clicking signup in the top right to easily create an account with ease.
-                    Logging in after registering a new account is as easy as just typing back in the info. You can also add a custom profile picture if wanted.
-                </p>
+               <h2 class="large-spacer hidden">User Authentication</h2>
+<h3 class="hidden">Registering & Logging In</h3>
+<p class="hidden">
+  The application includes a complete <strong>authentication system</strong>. New users 
+  can sign up by creating an account with an email and password, while existing users 
+  can log in securely. Session management was implemented to keep users logged in 
+  across the platform.  
+  <br><br>
+  I also added the ability for users to upload a custom profile picture, giving 
+  accounts a more personalised feel. The login flow was designed to be lightweight 
+  and intuitive, ensuring minimal friction when joining the app.
+</p>
         
-            <figure class="full hidden">
-                <img class="insert insert--shadow vpheaderimg center" src="webappdev1/images/homelogin.png" alt="View of components used in the design system." width="800" height="350">
-            </figure>
-            <figure class="full hidden">
-                <img class="insert insert--shadow vpheaderimg center" src="webappdev1/images/signup.png" alt="View of components used in the design system." width="800" height="350">
-            </figure>
-            <figure class="full hidden">
-                <img class="insert insert--shadow vpheaderimg  center" src="webappdev1/images/login.png" alt="Continued view of components" width="800" height="350">
-                <figcaption class="caption">Preview of the site
-                </figcaption>
-            </figure>
+<!-- Second row (two images side by side) -->
+    <div class="image-row">
+      <figure>
+        <img class="insert insert--shadow vpheaderimg clickable-img"
+          src="webappdev1/images/homelogin.png"
+          alt="preview"
+          width="725" height="350">
+        
+      </figure>
+
+      <figure>
+        <img class="insert insert--shadow vpheaderimg clickable-img"
+          src="webappdev1/images/signup.png"
+          alt="preview"
+          width="725" height="350">
+        
+      </figure>
+</div>
+<div class="image-row">
+      <figure>
+        <img class="insert insert--shadow vpheaderimg clickable-img"
+          src="webappdev1/images/login.png"
+          alt="preview"
+          width="725" height="350">
+        
+      </figure>
+    </div>
+
+           
                 <h3 class="large-spacer hidden">Home Page</h3>
-                <p class="hidden">The home page was styled to look retro. There are interactive buttons that link to other page's such as 'Learn More' which will deliver you to the about Page
-                    to learn more about the site. The color scheme is blue and yellow for the reasoning of keeping the aesthetic of the old blockbuster.
-                </p>
-                <p class="hidden">I created sections to space out all the information along with a website statistics section that reacts to collection's on the site created by the user.</p>
+<p class="hidden">
+  The homepage was built in <strong>React.js</strong> and styled to emulate the nostalgic 
+  look of <em>80’s and 90’s Blockbuster video stores</em>. I used a blue and yellow 
+  palette and bold typography to give it a retro aesthetic, while still keeping 
+  the layout clean and responsive.  
+  <br><br>
+  Interactive buttons and links lead users to different sections such as 
+  “Learn More,” which brings them to an about page explaining the app. 
+  A live <strong>statistics widget</strong> dynamically updates to show the 
+  number of collections created by users, adding a sense of community engagement.
+</p>
         
                     <figure class="full hidden">
-                        <img class="insert insert--shadow vpheaderimg center" src="webappdev1/images/homescreen.gif" alt="View of components used in the design system." width="800" height="350">
+                        <img class="insert insert--shadow vpheaderimg center clickable-img" src="webappdev1/images/homescreen.gif" alt="View of components used in the design system." width="800" height="350">
                     </figure>
                 
         
                 <h3 class="large-spacer">about page</h3>
-                <p>As we were asked to use fictional characters for our about page within the project i had used Walt Jr from the hit TV Series 'Breaking Bad'.
-                </p>
+                <p class="hidden">
+  For the project brief, we were asked to use fictional characters on the about page. 
+  I chose <strong>Walt Jr. from Breaking Bad</strong> as a playful nod to pop culture. 
+  This page gave me the chance to experiment with creative content and styling 
+  while still using React components to keep the design modular.
+</p>
                 
                 <figure class="full hidden">
-                    <img class="insert insert--shadow vpheaderimg center" src="webappdev1/images/aboutpage.gif" alt="View of components used in the design system." width="800" height="350">
+                    <img class="insert insert--shadow vpheaderimg center clickable-img" src="webappdev1/images/aboutpage.gif" alt="View of components used in the design system." width="800" height="350">
                 </figure>
         
-                <h3 class="large-spacer">creating collection</h3>
+               <h3 class="large-spacer">Creating & Managing Collections</h3>
+<p class="hidden">
+  One of the core features of Rentables is the ability for users to 
+  <strong>create movie collections</strong>. Using forms connected to the backend, 
+  users can add titles, descriptions, and images for each movie.  
+  <br><br>
+  Collections can then be browsed from the user’s dashboard, where I implemented 
+  a <strong>dynamic React state management system</strong> to ensure that new additions 
+  appear instantly without needing a full page refresh.  
+  <br><br>
+  Movies can also be rated, and ratings are reflected across the user’s profile 
+  to provide a sense of progression and engagement.
+</p>
 
-                <figure class="full hidden">
-                    <img class="insert insert--shadow vpheaderimg center" src="webappdev1/images/createplaylist.png" alt="View of components used in the design system." width="800" height="250">
-                </figure>
-
-                <figure class="full hidden">
-                    <img class="insert insert--shadow vpheaderimg center" src="webappdev1/images/dashboard.png" alt="View of components used in the design system." width="800" height="350">
-                </figure>
-
-               
-
-                <figure class="full hidden">
-                    <img class="insert insert--shadow vpheaderimg center" src="webappdev1/images/filmcollection.png" alt="View of components used in the design system." width="800" height="350">
-                </figure>
+             
           
+                <!-- Second row (two images side by side) -->
+    <div class="image-row">
+      <figure>
+        <img class="insert insert--shadow vpheaderimg clickable-img"
+          src="webappdev1/images/createplaylist.png"
+          alt="preview"
+          width="725" height="350">
         
+      </figure>
+
+      <figure>
+        <img class="insert insert--shadow vpheaderimg clickable-img"
+          src="webappdev1/images/dashboard.png"
+          alt="preview"
+          width="725" height="350">
+        
+      </figure>
+</div>
+<div class="image-row">
+      <figure>
+        <img class="insert insert--shadow vpheaderimg clickable-img"
+          src="webappdev1/images/filmcollection.png"
+          alt="preview"
+          width="725" height="350">
+        
+      </figure>
+    </div>
+
+        
+
+<h2 class="large-spacer hidden">Reflection</h2>
+<p class="hidden">
+  Building Rentables challenged me to think as both a frontend and backend developer.  
+  On the frontend, I strengthened my skills in <strong>React.js</strong>, particularly 
+  in managing state and creating reusable components. On the backend, I learned how to 
+  connect routes, handle authentication, and manage dynamic data efficiently using 
+  <strong>Node.js and Express</strong>.  
+  <br><br>
+  Styling the project with a unique retro theme helped me refine my design skills, 
+  balancing creativity with usability. More importantly, this project gave me real 
+  experience in planning, structuring, and delivering a full-stack application — 
+  from concept to deployment. It was a strong step forward in my journey toward 
+  becoming a versatile developer who can handle both design and technical challenges.
+</p>
+
                 </div>
             </div>
         </div>
