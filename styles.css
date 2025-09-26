@@ -281,7 +281,7 @@ font-weight: 750;
     user-select: none;
     visibility: visible;
     pointer-events: none;
-    z-index: 0;
+    z-index: -1;
   }
 
   
