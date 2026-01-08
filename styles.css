@@ -2433,13 +2433,23 @@ font-weight: 950;
 
 .image-row {
   display: flex;
-  gap: 20px;   /* space between the two images */
-  justify-content: flex-start; /* align images to the left */
+  gap: 20px;
+  justify-content: center;
+  align-items: flex-start;
   margin-top: 20px;
+  flex-wrap: wrap; /* allows wrapping on small screens */
 }
 
 .image-row figure {
   margin: 0;
+  flex: 0 1 300px; /* controls image block width */
+}
+
+.image-row img {
+  width: 100% !important; /* overrides vpheaderimg */
+  max-width: 300px;
+  height: auto;
+  display: block;
 }
 
 
@@ -3212,4 +3222,42 @@ body {
   .page-flyers .project-sticky{
     margin-left: -2rem;
   }
+}
+
+@media (max-width: 768px) {
+  .image-row {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .image-row img {
+    max-width: 420px;
+  }
+}
+
+
+
+/* FORCE side-by-side images inside .image-row */
+.image-row {
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: nowrap !important;
+  gap: 20px;
+  justify-content: center;
+  align-items: flex-start;
+  margin-top: 20px;
+}
+
+.image-row > figure {
+  margin: 0 !important;
+  flex: 1 1 0 !important;
+  max-width: 320px;     /* adjust smaller/bigger */
+  min-width: 0;         /* IMPORTANT: allows flex items to shrink */
+}
+
+.image-row > figure > img {
+  display: block !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  height: auto !important;
 }
