@@ -3261,3 +3261,30 @@ body {
   max-width: 100% !important;
   height: auto !important;
 }
+
+
+.video-wrapper {
+  position: relative;
+  padding-top: 56.25%; /* 16:9 */
+}
+.video-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.video-embed{
+  width: 960px;
+  max-width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 18px;  /* match your style */
+  overflow: hidden;     /* IMPORTANT: clips iframe corners */
+}
+
+.video-embed iframe{
+  width: 100%;
+  height: 100%;
+  display: block;
+}
